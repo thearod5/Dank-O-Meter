@@ -1,4 +1,4 @@
-const curr_dir = __dirname ; 
+const curr_dir = __dirname ;
 const path = require("path") ;
 const bodyParser = require("body-parser") ;
 const express = require("express") ;
