@@ -10,7 +10,7 @@ const static_path = curr_dir + "/src/Client/" ;
 const raterPath = curr_dir + "/src/server/MachineLearning/predictor.py" ;
 const classifierPath = curr_dir + "/src/server/MachineLearning/classifier.py" ;
 
-console.log(curr_dir) ; 
+console.log("Serving files in: " + static_path) ;
 
 app.use(bodyParser.json()) ;
 app.use(express.static(static_path, {index: "home.html"})) ; 

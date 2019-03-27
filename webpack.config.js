@@ -5,9 +5,9 @@ var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, './src/client/build');
 var APP_DIR = path.resolve(__dirname, './src/client');
 
-const config = {
+module.exports = {
 	entry: {
-		main: APP_DIR + '/index.js'
+		main: APP_DIR + '/server.js'
 	},
 	output: {
 		filename: 'bundle.js',
@@ -35,5 +35,3 @@ const config = {
 		],
   	}
 };
-
-module.exports = config;
