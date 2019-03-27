@@ -8,13 +8,13 @@ const spawn = require("child_process").spawn;
 const waitUntil = require('wait-until');
 const timeout_secs = 60 ;
 const static_path = path.resolve(curr_dir, "../client") ;
-const raterPath = path.resolve(curr_dir, "MachineLearning", "predictor.py") ;
+const rater_path = path.resolve(curr_dir, "MachineLearning", "predictor.py") ;
 const classifierPath = path.resolve(curr_dir, "MachineLearning", "classifier.py") ;
 
 app.use(bodyParser.json()) ;
 app.use(express.static(static_path, {index: "Home.html"})) ;
 
-console.log("Serving static files in: " + static_path) ;
+console.log("Serving Predictor files on: " + rater_path) ;
 
 app.get("/HelloWorld", (req, res) => {
 	res.send("Hello World!") ; 
@@ -26,7 +26,7 @@ app.post("/api/predict", (req, res) => {
 	let count = 2 ;
 	let predictions = {} ;
 
-	const raterProcess = spawn('python',  [raterPath, data]);
+	const raterProcess = spawn('python',  [rater_path, data]);
 	const strainifyProcess = spawn('python',  [classifierPath, data]);
 
 	raterProcess.stdout.on('data', (data) => {
