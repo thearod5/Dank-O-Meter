@@ -9,7 +9,7 @@ const waitUntil = require('wait-until');
 const timeout_secs = 60 ;
 const static_path = path.resolve(curr_dir, "../client") ;
 const rater_path = path.resolve(curr_dir, "MachineLearning", "predictor.py") ;
-const classifierPath = path.resolve(curr_dir, "MachineLearning", "classifier.py") ;
+const classifier_path = path.resolve(curr_dir, "MachineLearning", "classifier.py") ;
 
 app.use(bodyParser.json()) ;
 app.use(express.static(static_path, {index: "Home.html"})) ;
@@ -27,10 +27,10 @@ app.post("/api/predict", (req, res) => {
 	let predictions = {} ;
 
 	const raterProcess = spawn('python',  [rater_path, data]);
-	const strainifyProcess = spawn('python',  [classifierPath, data]);
+	const strainifyProcess = spawn('python',  [classifier_path, data]);
 
 	raterProcess.stdout.on('data', (data) => {
-		const rating = parseFloat(data.toString()) ;
+		const rating = parseFloat(data.toString()) ;ter
 		predictions["predicted_rating"] = rating ;
 		count--;
 	});
@@ -44,7 +44,6 @@ app.post("/api/predict", (req, res) => {
 	waitUntil(500, 2 * timeout_secs, function condition() {
 		return (count == 0);
 	}, function done() {
-
 		if(count != 0)
 			res.send({error: "Got tired of waiting for predictions models"}) ;
 		else
