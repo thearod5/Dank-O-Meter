@@ -11,7 +11,7 @@ const raterPath = __dirname + "/MachineLearning/predictor.py" ;
 const classifierPath = __dirname + "/MachineLearning/classifier.py" ;
 
 app.use(bodyParser.json()) ;
-app.use(express.static(static_path));
+app.use(express.static(static_path, {index: "index.html"})) ; 
 
 app.post("/api/predict", (req, res) => {
 
