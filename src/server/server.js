@@ -1,4 +1,4 @@
-const curr_dir = __dirname ; //process.cwd() ;
+const curr_dir = process.cwd() ;
 const path = require("path") ;
 const bodyParser = require("body-parser") ;
 const express = require("express") ;
@@ -7,12 +7,14 @@ const PORT = process.env.PORT || 3000 ;
 const spawn = require("child_process").spawn;
 const waitUntil = require('wait-until');
 const timeout_secs = 60 ;
-const static_path = path.resolve(curr_dir, "../client") ;
-const raterPath = path.resolve(curr_dir, ".//MachineLearning/predictor.py") ;
-const classifierPath = path.resolve(curr_dir, "./MachineLearning/classifier.py") ;
+const static_path = path.resolve(curr_dir, "client") ;
+const raterPath = path.resolve(curr_dir, "MachineLearning", "predictor.py") ;
+const classifierPath = path.resolve(curr_dir, "MachineLearning", "classifier.py") ;
 
 app.use(bodyParser.json()) ;
 app.use(express.static(static_path, {index: "Home.html"})) ;
+
+console.log("Serving static files in :" + static_path) ; 
 
 app.get("/HelloWorld", (req, res) => {
 	res.send("Hello World!") ; 
