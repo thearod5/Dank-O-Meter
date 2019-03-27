@@ -14,7 +14,7 @@ const classifierPath = path.resolve(curr_dir, "MachineLearning", "classifier.py"
 app.use(bodyParser.json()) ;
 app.use(express.static(static_path, {index: "Home.html"})) ;
 
-console.log("Serving static files in :" + static_path) ;
+console.log("Serving static files in: " + static_path) ;
 
 app.get("/HelloWorld", (req, res) => {
 	res.send("Hello World!") ; 
