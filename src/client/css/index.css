@@ -1,0 +1,27 @@
+:root {
+  --global-font: "Trebuchet MS"
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--global-font) ;
+  text-align: center ;
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  font-family: var(--global-font) ;
+}
+
+input[type=submit]:hover {
+  transition: color 0.5s ease;
+  color: chartreuse;
+}
+
+.button {
+  transition: background-color 0.5s ease;
+  background-color: red;
+}

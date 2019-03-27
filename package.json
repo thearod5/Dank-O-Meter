@@ -1,0 +1,33 @@
+{
+  "name": "react-express",
+  "version": "1.0.0",
+  "description": "Testing creating react app served by express",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server/index.js",
+    "webpack": "./node_modules/.bin/webpack -w",
+    "test": "mocha --compilers babel-core/register ./test/*test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.16.4",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "wait-until": "0.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
