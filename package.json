@@ -4,7 +4,7 @@
   "description": "Testing creating react app served by express",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server/index.js",
+    "start": "node src/server/index.js",
     "webpack": "./node_modules/.bin/webpack -w",
     "test": "mocha --compilers babel-core/register ./test/*test.js"
   },
