@@ -1,4 +1,4 @@
-
+const curr_dir = process.cwd()
 const bodyParser = require("body-parser") ;
 const express = require("express") ;
 const app = express() ;
@@ -6,9 +6,11 @@ const PORT = process.env.PORT || 3000 ;
 const spawn = require("child_process").spawn;
 const waitUntil = require('wait-until');
 const timeout_secs = 60 ;
-const static_path = __dirname + "/../Client/" ;
-const raterPath = __dirname + "/MachineLearning/predictor.py" ;
-const classifierPath = __dirname + "/MachineLearning/classifier.py" ;
+const static_path = curr_dir + "/src/Client/" ;
+const raterPath = curr_dir + "/src/server/MachineLearning/predictor.py" ;
+const classifierPath = curr_dir + "/src/server/MachineLearning/classifier.py" ;
+
+console.log(curr_dir) ; 
 
 app.use(bodyParser.json()) ;
 app.use(express.static(static_path, {index: "home.html"})) ; 
