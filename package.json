@@ -14,7 +14,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "child_process": "^1.0.2",
-    "express": "^4.16.4",
+    "express": "^4.19.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "wait-until": "0.0.2"
